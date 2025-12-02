@@ -1,3 +1,6 @@
+Voici le fichier complet prêt à copier-coller dans `index.html` (assure-toi que l’image s’appelle bien `yannick-lefevre.jpg` dans ton dépôt) :
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -209,6 +212,21 @@
             text-decoration: underline;
         }
         
+        /* Bloc photo président */
+        .president-photo {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .president-photo img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0077b6;
+        }
+        
         footer {
             background: #0077b6;
             color: white;
@@ -259,9 +277,14 @@
             <div class="quick-grid">
                 <div class="quick-item">
                     <strong>🏢 Présidence</strong>
-                    <p>Yannick Lefèvre</p>
+                    <p id="president-name" style="cursor:pointer; color:#0077b6; text-decoration:underline;">
+                        Yannick Lefèvre
+                    </p>
                     <p><a href="tel:+33682363560">📞 +33 6 82 36 35 60</a></p>
                     <p><a href="mailto:yannick.lefevre@solana.de">📧 yannick.lefevre@solana.de</a></p>
+                    <div id="president-photo" class="president-photo">
+                        <img src="yannick-lefevre.jpg" alt="Yannick Lefèvre">
+                    </div>
                 </div>
                 
                 <div class="quick-item">
@@ -368,5 +391,17 @@
     <footer>
         <p>&copy; 2025 Solana France | Semences & Solutions Agricoles | Tous droits réservés</p>
     </footer>
+    
+    <script>
+        document.getElementById('president-name').addEventListener('click', function () {
+            var bloc = document.getElementById('president-photo');
+            if (bloc.style.display === 'block') {
+                bloc.style.display = 'none';
+            } else {
+                bloc.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
+```
